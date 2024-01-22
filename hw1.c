@@ -12,8 +12,12 @@ static void methods()
     //        printf("some_function\n");
     //        printf("some_other_function\n");
     //      you should have exactly one \n in each printf
+    printf("error_handler\n");
+    printf("is_invalid\n");
+    printf("signature\n");
+    printf("usage\n");
 
-    assert(0); // Not implemented, when you have, remove this line.
+     // Not implemented, when you have, remove this line.
 }
 
 
@@ -25,8 +29,13 @@ static void vars()
     //        printf("some_variable\n");
     //        printf("some_other_variable\n");
     //      you should have exactly one \n in each printf
-
-    assert(0); // Not implemented, when you have, remove this line.
+    printf("ERRORS\n");
+    printf("FULL\n");
+    printf("FULL_ERRORS\n");
+    printf("MODE\n");
+    printf("RESTRICTED\n");
+    printf("STATUSCODE\n");
+    // assert(0); // Not implemented, when you have, remove this line.
 }
 
 // TODO define functions and variables you found in lib.o
@@ -45,7 +54,8 @@ int main(int argc, char * argv[])
     } else if (!strcmp(arg, "vars")) {
         vars();
     } else if (!strcmp(arg, "help")) {
-        assert(0); // NOT IMPLEMENTED remove this line once implemented
+       usage();
+	//assert(0); // NOT IMPLEMENTED remove this line once implemented
     } else {
         const int result = -1;
         assert(0); // NOT IMPLEMENTED remove this line once implemented
