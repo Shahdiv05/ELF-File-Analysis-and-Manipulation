@@ -54,8 +54,8 @@ int main(int argc, char * argv[])
     } else if (!strcmp(arg, "vars")) {
         vars();
     } else if (!strcmp(arg, "help")) {
-       usage();
-	//assert(0); // NOT IMPLEMENTED remove this line once implemented
+      // usage();
+	assert(0); // NOT IMPLEMENTED remove this line once implemented
     } else {
         const int result = -1;
         assert(0); // NOT IMPLEMENTED remove this line once implemented
