@@ -1,8 +1,8 @@
 all: hw1
 
 
-hw1: hw1.o
-	gcc -g -o hw1 hw1.o
+hw1: hw1.o lib.o
+	gcc -g -o hw1 hw1.o lib.o
 
 
 hw1.o: hw1.c
