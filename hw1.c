@@ -37,9 +37,20 @@ static void vars()
     printf("STATUSCODE\n");
     // assert(0); // Not implemented, when you have, remove this line.
 }
-void usage();
 
 // TODO define functions and variables you found in lib.o
+
+void usage();	//Test case 3, called in else if
+
+extern void error_handler();
+extern int is_invalid();
+extern int signature();
+extern int STATUSCODE;
+extern int RESTRICTED;
+extern int FULL;
+extern int MODE;
+extern int ERRORS;
+extern int FULL_ERRORS;
 
 
 int main(int argc, char * argv[])
@@ -58,8 +69,12 @@ int main(int argc, char * argv[])
       	usage();
 	//assert(0); // NOT IMPLEMENTED remove this line once implemented
     } else {
-        const int result = -1;
-        assert(0); // NOT IMPLEMENTED remove this line once implemented
+       // const int result = -1;
+        int result = signature(arg,strlen(arg));
+	//if(STATUSCODE != 0){
+		printf("%d", result);
+	//}
+	////assert(0); // NOT IMPLEMENTED remove this line once implemented
     }
 
     return 0;
