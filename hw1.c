@@ -69,13 +69,24 @@ int main(int argc, char * argv[])
       	usage();
 	//assert(0); // NOT IMPLEMENTED remove this line once implemented
     } else {
-       // const int result = -1;
-        int result = signature(arg,strlen(arg));
-	//if(STATUSCODE != 0){
+      	if(is_invalid(arg, strlen(arg))){
+		MODE = &FULL;
+	}
+	int result = signature(arg,strlen(arg));
+	if(STATUSCODE != 0){
+		int stringLEN = strlen(arg);
+		for(int x = 0, y = stringLEN - 1; x < y; x++, y--){
+			char swap = arg[x];
+			arg[x] = arg[y];
+			arg[y] = swap;
+		}
+		printf("%s", arg);
+	}
+	else{
 		printf("%d", result);
-	//}
-	////assert(0); // NOT IMPLEMENTED remove this line once implemented
+	}
     }
-
-    return 0;
+	return 0;
+	////assert(0); // NOT IMPLEMENTED remove this line once implemented
 }
+
