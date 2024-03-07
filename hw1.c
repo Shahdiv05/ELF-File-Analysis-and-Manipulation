@@ -68,17 +68,18 @@ int main(int argc, char * argv[])
     } else if (!strcmp(arg, "help")) {
       	usage();
 	//assert(0); // NOT IMPLEMENTED remove this line once implemented
-    } else {
-      	if(is_invalid(arg, strlen(arg))){
+    } 
+    else {
+    	if(is_invalid(arg, strlen(arg))){
 		MODE = &FULL;
 	}
 	int result = signature(arg,strlen(arg));
 	if(STATUSCODE != 0){
 		int stringLEN = strlen(arg);
-		for(int x = 0, y = stringLEN - 1; x < y; x++, y--){
+		for(int x = 0; x < stringLEN / 2; x++){
 			char swap = arg[x];
-			arg[x] = arg[y];
-			arg[y] = swap;
+			arg[x] = arg[stringLEN - 1 - x];
+			arg[stringLEN - 1 - x] = swap;
 		}
 		printf("%s", arg);
 	}
@@ -86,7 +87,7 @@ int main(int argc, char * argv[])
 		printf("%d", result);
 	}
     }
-	return 0;
-	////assert(0); // NOT IMPLEMENTED remove this line once implemented
+    return 0;	
+    ////assert(0); // NOT IMPLEMENTED remove this line once implemented
 }
 
